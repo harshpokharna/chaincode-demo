@@ -1,0 +1,15 @@
+toph12:
+  image: hyperledger/fabric-peer
+  ports:
+    - "7050:7050"
+    - "7051:7051"
+    - "7052:7052"
+  volumes:
+    - /Users/harsh/workspace:/workspace
+  environment:
+    - CORE_PEER_ID=vp0
+    - CORE_PEER_ADDRESSAUTODETECT=true
+    - CORE_VM_ENDPOINT=unix:///var/run/docker.sock
+    - CORE_LOGGING_LEVEL=DEBUG
+    - GOPATH=$GOPATH:/workspace/go
+  command: peer node start --peer-chaincodedev

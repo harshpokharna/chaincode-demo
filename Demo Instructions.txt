@@ -1,0 +1,29 @@
+START DOCKER CONTAINER
+---------------------------------------
+
+docker-compose up
+
+
+LOGIN INTO CONTAINER
+-----------------------------------------
+
+docker ps (Copy the process id)
+docker exec -it <proceess-id> /bin/bash
+
+(Opens iteractive terminal)
+
+Navigate to go(chaincode) file
+
+go clean
+go build
+CORE_CHAINCODE_ID_NAME=cc CORE_PEER_ADDRESS=0.0.0.0:7051 ./chaincode-demo
+
+This makes the code ready for deployment
+
+POSTMAN
+-------------------------------------------
+Deploy
+Get
+Put
+Get
+
